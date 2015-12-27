@@ -1,0 +1,67 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+     
+     font-size:13px;
+     font-family:Arial;
+ }
+
+a {
+    text-decoration:none;
+    color:black;
+} 
+
+a:hover {
+    color: gray;
+}
+ 
+#main {
+    margin:5% auto;
+    border:1px solid #B7B7B7;
+    width:900px;
+    padding:0 25px 0 25px;
+
+} 
+
+h1 {-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+    color:#B7B7B7;
+    background: #EFEFEF;
+    margin:0 0 2% 0;
+    display:inline-block; 
+    
+    padding:25px 25px;
+    width:100%;
+    margin-left:-25px;
+    border-bottom:1px solid #B7B7B7;
+
+}
+
+table {border:1px solid #CCC;}
+    tr td {padding:10px;}
+  tr:nth-child(odd) {background: #CCC;} 
+  tr:nth-child(even) {background: #EFEFEF;} 
+  th {padding:10px;text-align:center;}
+ 
+td.pokaz,
+td.edytuj,
+td.usun{
+    padding-left:30px;
+}
+td.pokaz {background: url("shop.png") no-repeat 5px center;}
+td.edytuj {background: url("edit.png") no-repeat 5px center;}
+td.usun {background: url("del.png") no-repeat 5px center;}

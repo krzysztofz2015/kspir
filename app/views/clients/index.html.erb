@@ -1,0 +1,26 @@
+<center>
+<h1>Clients List</h1>
+ 
+<table>
+  <tr>
+    <th>Company Name</th>
+    <th>Address</th>
+    <th>Number Phone</th>
+    <th colspan = "3">Options</th>
+  </tr>
+ 
+  <% @clients.each do |client| %>
+    <tr>
+      <td><%= client.Company_name %></td>
+      <td><%= client.Address %></td>
+      <td><%= client.Number_Phone %></td>
+      <td class="pokaz"><%= link_to 'Show purchases', client_path(client) %></td>
+      <td class="edytuj"><%= link_to 'Edit', edit_client_path(client) %></td>
+      <td class="usun"><%= link_to 'Destroy', client_path(client),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<br><br>
+<button type="button"><%= link_to 'Add new Client', new_client_path %></button></center>

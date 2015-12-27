@@ -1,0 +1,53 @@
+<center>
+<h1>Company:</h1>
+<p>
+  <strong>Company name:</strong>
+  <%= @client.Company_name %>
+</p>
+ 
+<p>
+  <strong>Address:</strong>
+  <%= @client.Address %>
+</p>
+<p>
+  <strong>Number Phone:</strong>
+  <%= @client.Number_Phone %>
+</p>
+<br><br>
+<h1>Bought products:</h1>
+ <% @client.products.each do |product| %>
+ <%= product.product_name %>,
+ <%= product.number %>,
+ <%= product.price %>,
+ 
+ <strong> <%= link_to 'DESTROY', [product.client, product],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %></strong>
+
+<br>
+<% end %>
+<br><br><br>
+<h1>Add next product:</h1>
+
+<%= form_for([@client, @client.products.build]) do |f| %>
+    <table>
+    <tr>  
+    <td><%= f.label :product_name %></td>
+    <td><%= f.text_area :product_name %></td>
+    </tr>
+    <tr>
+    <td><%= f.label :number %></td>
+    <td><%= f.text_field :number %></td>
+    </tr>
+    <tr>
+   <td><%= f.label :price %></td>
+    <td><%= f.text_field :price %></td>
+    </tr>
+  </table>
+    <p>
+    <%= f.submit %>
+  </p>
+ <% end %>
+<br>
+
+<button type="button"><%= link_to 'Back', clients_path %></button></center>

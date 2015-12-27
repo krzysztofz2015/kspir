@@ -1,0 +1,18 @@
+<p>
+  <strong>Product name:</strong>
+  <%= product.product_name %>
+</p>
+ 
+<p>
+  <strong>Number:</strong>
+  <%= product.number %>
+</p>
+<p>
+  <strong>Price:</strong>
+  <%= product.price %>
+</p>
+<p>
+  <%= link_to 'Destroy Comment', [client.product, client],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
